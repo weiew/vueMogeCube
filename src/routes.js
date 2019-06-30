@@ -2,7 +2,8 @@ import Login from './views/Login.vue'
 import NotFound from './views/404.vue'
 import Home from './views/Home.vue'
 import Main from './views/Main.vue'
-import projectList from './views/project/projectList.vue'
+import projectList from './views/list/projectList.vue'
+import rankingList from './views/list/rankingList.vue'
 import Setting from './views/Setting.vue'
 
 let routes = [
@@ -19,11 +20,10 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: '基础页面',
+        name: 'rankingList',
         iconCls: 'fa fa-home fa-lg',
         children: [
-            { path: '/main', component: Main, name: '首页' },
-            { path: '/setting', component: Setting, name: '个人设置'}
+            { path: '/rankingList', component: rankingList, name: 'rankingList' }
         ]
     },
     {

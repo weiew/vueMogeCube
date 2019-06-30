@@ -4,6 +4,8 @@ var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   loaders: utils.cssLoaders({
+/*    sourceMap: sourceMapEnabled,
+    extract: false*/
     sourceMap: isProduction
       ? config.build.productionSourceMap
       : config.dev.cssSourceMap,

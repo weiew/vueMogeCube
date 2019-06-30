@@ -1,29 +1,22 @@
 import Vue from 'vue'
 import App from './App'
-import ElementUI from 'element-ui'
+import Cube from 'cube-ui'
+import { Validator } from 'cube-ui'
 import VueRouter from 'vue-router'
 import store from './vuex/store'
 import Vuex from 'vuex'
 import routes from './routes'
-import 'font-awesome/css/font-awesome.min.css'
-
-Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
 import util from './common/js/util'
 Vue.use(util);
-
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-NProgress.configure({ showSpinner: false });
-
+Vue.use(Cube)
+Vue.use(Validator)
+Validator.addMessage('required', 'Can not be empty');
+Validator.addMessage('type', {email:'Please enter the correct email format'});
 const router = new VueRouter({
   routes
 })
-
-require('./assets/theme/theme-custom/index.css');
-require('./assets/css/custom.scss');
-
 
 new Vue({
   //el: '#app',

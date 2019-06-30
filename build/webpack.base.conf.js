@@ -6,7 +6,8 @@ var vueLoaderConfig = require('./vue-loader.conf')
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
-
+var PostCompilePlugin = require('webpack-post-compile-plugin')
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -18,6 +19,10 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+      new PostCompilePlugin(),
+      new TransformModulesPlugin()
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
