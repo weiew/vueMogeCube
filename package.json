@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.21.1",
     "cube-ui": "^1.12.9",
     "font-awesome": "^4.7.0",
     "node-gyp": "^3.8.0",
